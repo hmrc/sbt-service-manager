@@ -29,7 +29,6 @@ object ServiceManagerPlugin extends AutoPlugin {
     val startItDependencies = taskKey[Unit]("Start dependencies for integration tests")
     val stopItDependencies = taskKey[Unit]("Stop dependencies for integration tests")
     val itDependenciesList = settingKey[List[ExternalService]]("List dependencies for integration tests")
-    val serviceManagerWorkspaceDirectoryPath = settingKey[Option[String]]("Directory where service manger is configured")
   }
 
   import Keys._
