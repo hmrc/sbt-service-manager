@@ -96,7 +96,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
     val startCommandFromSource = runServicesCommand(servicesFromSources, runFromBinary = false)
 
     val setupCommands =
-      "echo ---------- clonning config if needed" #&&
+      "echo ---------- cloning config if needed" #&&
         cloneConfigurationIfNeeded #&&
         stopServicesCommand() #&&
         "echo ---------- cleaning logs" #&&
