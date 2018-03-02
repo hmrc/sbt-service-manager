@@ -82,7 +82,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
   }
 
   val smConfigurationDirectory = s"$serviceManagerWorkspaceDirectoryPath/service-manager-config"
-  val cloneConfiguration = s"rm -rf $serviceManagerWorkspaceDirectoryPath/service-manager-config" #&& s"git clone git@github.tools.tax.service.gov.uk:HMRC/service-manager-config.git $serviceManagerWorkspaceDirectoryPath/service-manager-config"
+  val cloneConfiguration = s"rm -rf $serviceManagerWorkspaceDirectoryPath/service-manager-config" #&& s"git clone git@githubcom:HMRC/service-manager-config.git $serviceManagerWorkspaceDirectoryPath/service-manager-config"
   val cloneConfigurationIfNeeded = s"test -d $smConfigurationDirectory" #|| cloneConfiguration
 
   def start() = {
