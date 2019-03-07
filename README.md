@@ -26,7 +26,7 @@ In your `project/FrontendBuild.scala` or `project/MicroserviceBuild.scala` after
 
 ```
 lazy val externalServices = List(
-    ExternalService(name = "SERVICE1", enableTestOnlyEndpoints = true, extraConfig = Map("key" -> "value", runFrom = Source)),
+    ExternalService(name = "SERVICE1", enableTestOnlyEndpoints = true, extraConfig = Map("key" -> "value"), runFrom = Source),
     ExternalService(name = "SERVICE2", enableTestOnlyEndpoints = false, runFrom = Jar)
 )
 ```
