@@ -115,7 +115,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
   private def runServicesCommand(externalServices: List[ExternalService], runFromBinary: Boolean): Seq[String] = {
     if (externalServices.isEmpty) Seq(s"echo", s"no services required running from runFromBinary $runFromBinary")
     else {
-      val runFromBinaryFlag = if (runFromBinary) List("-f") else Nil
+      val runFromBinaryFlag = if (runFromBinary) List("-r") else Nil
       Seq("sm", "--start") ++ externalServices.map(_.name) ++ List("--appendArgs", "{" + externalServices.map(_.configToString).filter(_.nonEmpty).mkString(",") + "}", "--wait", "240") ++ runFromBinaryFlag
     }
   }
