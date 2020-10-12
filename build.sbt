@@ -11,7 +11,7 @@ lazy val root = Project(pluginName, base = file("."))
   .settings(
     sbtPlugin := true,
     targetJvm := "jvm-1.8",
-    scalaVersion := "2.12.8",
+    scalaVersion := "2.12.12",
     organization := "uk.gov.hmrc",
     makePublicallyAvailableOnBintray := true,
     ArtifactDescription()
