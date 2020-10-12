@@ -13,13 +13,13 @@ lazy val root = Project(pluginName, base = file("."))
     targetJvm := "jvm-1.8",
     scalaVersion := "2.12.8",
     organization := "uk.gov.hmrc",
-    makePublicallyAvailableOnBintray := false,
+    makePublicallyAvailableOnBintray := true,
     ArtifactDescription()
   )
   .settings(
     majorVersion := 0,
-    crossSbtVersions := List("0.13.18", "1.3.8"),
-    crossScalaVersions := List("2.11.12", "2.12.8"),
+    crossSbtVersions := List("0.13.18", "1.3.13"),
+    crossScalaVersions := List("2.11.12", "2.12.12"),
     resolvers := Seq(
       Resolver.bintrayRepo("hmrc", "releases"),
       Resolver.jcenterRepo
