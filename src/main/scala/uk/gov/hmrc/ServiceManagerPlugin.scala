@@ -75,7 +75,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
   import sys.process._
 
   def stopServicesCommand() = {
-    val stopCommand = s"sm --stop ${externalServices.map(_.name).mkString(" ")}"
+    val stopCommand = s"sm2 --stop ${externalServices.map(_.name).mkString(" ")}"
     println("Stopping services:")
     println(stopCommand)
     stopCommand
@@ -100,7 +100,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
         cloneConfigurationIfNeeded #&&
         stopServicesCommand() #&&
         "echo ---------- cleaning logs" #&&
-        "sm --cleanlogs" #&&
+        "sm2 --cleanlogs" #&&
         s"echo ---------- starting services from sources: ${startCommandFromSource.mkString(" ")}" #&&
         startCommandFromSource #&&
         s"echo ---------- starting services from jar: ${startCommandFromJar.mkString(" ")}" #&&
@@ -116,7 +116,7 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
     if (externalServices.isEmpty) Seq(s"echo", s"no services required running from runFromBinary $runFromBinary")
     else {
       val runFromBinaryFlag = if (runFromBinary) List("-r") else Nil
-      Seq("sm", "--start") ++ externalServices.map(_.name) ++ List("--appendArgs", "{" + externalServices.map(_.configToString).filter(_.nonEmpty).mkString(",") + "}", "--wait", "240") ++ runFromBinaryFlag
+      Seq("sm2", "--start") ++ externalServices.map(_.name) ++ List("--appendArgs", "{" + externalServices.map(_.configToString).filter(_.nonEmpty).mkString(",") + "}", "--wait", "240") ++ runFromBinaryFlag
     }
   }
 }
