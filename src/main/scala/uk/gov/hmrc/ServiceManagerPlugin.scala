@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -99,8 +99,6 @@ class ServiceManagerConfiguration(externalServices: List[ExternalService]) {
       "echo ---------- cloning config if needed" #&&
         cloneConfigurationIfNeeded #&&
         stopServicesCommand() #&&
-        "echo ---------- cleaning logs" #&&
-        "sm2 --cleanlogs" #&&
         s"echo ---------- starting services from sources: ${startCommandFromSource.mkString(" ")}" #&&
         startCommandFromSource #&&
         s"echo ---------- starting services from jar: ${startCommandFromJar.mkString(" ")}" #&&
