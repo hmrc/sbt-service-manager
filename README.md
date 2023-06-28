@@ -1,7 +1,13 @@
 
 # sbt-service-manager
 
-[![Build Status](https://travis-ci.org/hmrc/sbt-service-manager.svg?branch=master)](https://travis-ci.org/hmrc/sbt-service-manager) [ ![Download](https://api.bintray.com/packages/hmrc/sbt-plugin-releases/sbt-service-manager/images/download.svg) ](https://bintray.com/hmrc/sbt-plugin-releases/sbt-service-manager/_latestVersion)
+## This plugin is deprecated.
+
+### It relied on the deprecated [service-manager](https://github.com/hmrc/service-manager).
+
+### Instead, [service-manager-2](https://github.com/hmrc/sm2) should be started with an appropriate PROFILE before running the integration tests.
+
+------
 
 An SBT plugin to start and stop service manager dependencies for integration test
 
